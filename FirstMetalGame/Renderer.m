@@ -78,6 +78,7 @@ static const NSUInteger MaxBuffersInFlight = 3;
 
     id<MTLLibrary> defaultLibrary = [_device newDefaultLibrary];
 
+    // 这两函数也就是定义在 Shaders.metal文件里面的函数
     id <MTLFunction> vertexFunction = [defaultLibrary newFunctionWithName:@"vertexShader"];
 
     id <MTLFunction> fragmentFunction = [defaultLibrary newFunctionWithName:@"fragmentShader"];
@@ -155,7 +156,8 @@ static const NSUInteger MaxBuffersInFlight = 3;
       MTKTextureLoaderOptionTextureStorageMode : @(MTLStorageModePrivate)
       };
 
-    _colorMap = [textureLoader newTextureWithName:@"ColorMap"
+    // 纹理改成女朋友照片（照片在Assets里面添加即可）
+    _colorMap = [textureLoader newTextureWithName:@"Girl"
                                       scaleFactor:1.0
                                            bundle:nil
                                           options:textureLoaderOptions
